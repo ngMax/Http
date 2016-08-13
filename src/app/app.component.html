@@ -1,3 +1,15 @@
-<h1>
-  {{title}}
-</h1>
+<div class="style">
+    <h1>Firebase Form Demo</h1>
+    <label for="username">Username</label>
+    <input type="text" id="username" #username><br>
+    <label for="email">E-mail</label>
+    <input type="text" id="email" #email><br>
+    <button type="submit" class="btn btn-primary" (click)="onSubmit(username.value, email.value)">Submit</button>
+    <hr>
+    <button type="submit" class="btn btn-success" (click)="onGetData()">Get Data</button>
+    <ul>
+        <li *ngFor="let item of items">{{item.username}}/ {{item.email}}</li>
+    </ul>
+    <hr>
+    <p>{{asyncString | async}}</p>
+</div>
